@@ -1,0 +1,35 @@
+site_name: 分子分光学・量子化学 勉強会
+theme:
+  name: material
+  language: ja  # 検索ボックスなどを日本語化します
+
+markdown_extensions:
+  # 数式（MathJax）を扱うための設定
+  - pymdownx.arithmatex:
+      generic: true
+  # コードブロックに色をつけ、綺麗に表示するための設定
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format # これがコードの枠を正しく作ります
+  - attr_list
+  - md_in_html
+
+extra_javascript:
+  # 数式を表示するためのライブラリを読み込みます
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# --- (上の設定はそのまま残しておきます) ---
+
+nav:
+  - トップページ（シラバス）: index.md
+  - Phase 1. 数学的基礎:
+    - 第1回 テーラー展開: day1.md
+    - 第2回 偏微分: day2.md
