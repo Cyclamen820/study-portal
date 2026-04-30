@@ -30,6 +30,7 @@ extra_javascript:
 
 nav:
   - トップページ（シラバス）: index.md
+  - Mathjaxのサンプル : mathjax_sample.md
   - Phase 1. 数学的基礎:
     - 第1回 テーラー展開: day1.md
     - 第2回 偏微分: day2.md
