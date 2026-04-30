@@ -1,0 +1,21 @@
+export async function onRequest(context) {
+  // ▼ ここで好きなユーザー名とパスワードを設定します（半角英数字）
+  const USERNAME = 'Terahertz.st';
+  const PASSWORD = 'TeraHertz'; // ← 授業で学生に教えるパスワードに変更してください
+
+  const expectedAuth = `Basic ${btoa(`${USERNAME}:${PASSWORD}`)}`;
+  const authHeader = context.request.headers.get('Authorization');
+
+  // パスワードが間違っている、または入力されていない場合はブロック
+  if (!authHeader || authHeader !== expectedAuth) {
+    return new Response('認証が必要です (Authentication required)', {
+      status: 401,
+      headers: {
+        'WWW-Authenticate': 'Basic realm="SEIZAN Project"',
+      },
+    });
+  }
+
+  // 認証に成功したらページを表示
+  return context.next();
+}
