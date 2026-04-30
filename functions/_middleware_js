@@ -11,7 +11,7 @@ export async function onRequest(context) {
     return new Response('認証が必要です (Authentication required)', {
       status: 401,
       headers: {
-        'WWW-Authenticate': 'Basic realm="SEIZAN Project"',
+        'WWW-Authenticate': 'Basic realm="Study-portal"',
       },
     });
   }
